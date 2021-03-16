@@ -61,14 +61,17 @@
             }
         ],
         "no-use-before-define": "off",
+        "quote-props": "off",
+        "react/jsx-one-expression-per-line": "off",
+        "react/jsx-props-no-spreading": "off",
+        "max-len": "off",
+        "no-useless-escape": "off",
+        "react/no-array-index-key": "off",
         "@typescript-eslint/no-use-before-define": [
             "error"
         ],
         "react-hooks/rules-of-hooks": "error",
-        "react-hooks/exhaustive-deps": [
-            "warn", {
-              "additionalHooks": "useRecoilCallback"
-            }
-        ]
+        "react-hooks/exhaustive-deps": "off",
+        "no-unused-vars": ["error", { "args": "none" }]
     }
 }
