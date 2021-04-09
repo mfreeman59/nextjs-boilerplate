@@ -7,6 +7,23 @@ import '../styles/globals.css';
 
 const theme = createMuiTheme({
   spacing: 4,
+  typography: {
+    fontFamily: [
+      'Roboto',
+      'YuGothic',
+      '"Yu Gothic Medium"',
+      '"Yu Gothic"',
+      '"Helvetica Neue"',
+      '-apple-system',
+      'BlinkMacSystemFont',
+      '"Segoe UI"',
+      'HelveticaNeue',
+      'Verdana',
+      'Meiryo',
+      'sans-serif',
+    ].join(','),
+    fontSize: 19.6,
+  },
   palette: {
     primary: {
       main: '#1A9270',

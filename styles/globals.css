@@ -1,9 +1,11 @@
+html {
+  font-size: 10px;
+}
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family:YuGothic, "Yu Gothic Medium", "Yu Gothic","Helvetica Neue",  -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI",HelveticaNeue,Verdana, Meiryo, sans-serif;
-  font-size: 10px;
 }
 
 a {
