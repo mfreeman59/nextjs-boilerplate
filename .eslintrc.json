@@ -66,12 +66,14 @@
         "react/jsx-props-no-spreading": "off",
         "max-len": "off",
         "no-useless-escape": "off",
+        "no-continue": "off",
         "react/no-array-index-key": "off",
         "@typescript-eslint/no-use-before-define": [
             "error"
         ],
         "react-hooks/rules-of-hooks": "error",
         "react-hooks/exhaustive-deps": "off",
-        "no-unused-vars": ["error", { "args": "none" }]
+        "no-unused-vars": ["error", { "args": "none" }],
+        "yoda": ["error", "never", { "exceptRange": true }]
     }
 }
