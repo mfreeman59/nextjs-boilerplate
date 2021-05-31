@@ -1,11 +1,11 @@
-import { CssBaseline, ThemeProvider, createMuiTheme } from '@material-ui/core';
+import { CssBaseline, ThemeProvider, createTheme } from '@material-ui/core';
 import { AppProps } from 'next/dist/next-server/lib/router/router';
 import Head from 'next/head';
 import React from 'react';
 import { RecoilRoot } from 'recoil';
 import '../styles/globals.css';
 
-const theme = createMuiTheme({
+const theme = createTheme({
   spacing: 4,
   typography: {
     fontFamily: [
