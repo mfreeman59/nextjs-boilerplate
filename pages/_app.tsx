@@ -1,5 +1,10 @@
-import { CssBaseline, ThemeProvider, createTheme } from '@material-ui/core';
-import { AppProps } from 'next/dist/next-server/lib/router/router';
+import {
+  CssBaseline,
+  ThemeProvider,
+  StyledEngineProvider,
+  createTheme,
+} from '@mui/material';
+import { AppProps } from 'next/dist/shared/lib/router/router';
 import Head from 'next/head';
 import React from 'react';
 import { RecoilRoot } from 'recoil';
@@ -42,10 +47,12 @@ const MyApp = (props: AppProps) => {
         <Head>
           <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0" />
         </Head>
-        <ThemeProvider theme={theme}>
-          <CssBaseline />
-          <Component {...pageProps} />
-        </ThemeProvider>
+        <StyledEngineProvider injectFirst>
+          <ThemeProvider theme={theme}>
+            <CssBaseline />
+            <Component {...pageProps} />
+          </ThemeProvider>
+        </StyledEngineProvider>
       </>
     </RecoilRoot>
   );
