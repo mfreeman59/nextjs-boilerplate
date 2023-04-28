@@ -1,7 +1,6 @@
 import {
   CssBaseline,
   ThemeProvider,
-  StyledEngineProvider,
   createTheme,
 } from '@mui/material';
 import { AppProps } from 'next/dist/shared/lib/router/router';
@@ -9,6 +8,8 @@ import Head from 'next/head';
 import React from 'react';
 import { RecoilRoot } from 'recoil';
 import '../styles/globals.css';
+import createCache from '@emotion/cache';
+import { CacheProvider } from '@emotion/react';
 
 const theme = createTheme({
   spacing: 4,
@@ -39,21 +40,21 @@ const theme = createTheme({
   },
 });
 
+const clientSideEmotionCache = createCache({ key: 'css' });
+
 const MyApp = (props: AppProps) => {
-  const { Component, pageProps } = props;
+  const { Component, pageProps, emotionCache = clientSideEmotionCache } = props;
   return (
     <RecoilRoot>
-      <>
+      <CacheProvider value={emotionCache}>
         <Head>
           <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0" />
         </Head>
-        <StyledEngineProvider injectFirst>
-          <ThemeProvider theme={theme}>
-            <CssBaseline />
-            <Component {...pageProps} />
-          </ThemeProvider>
-        </StyledEngineProvider>
-      </>
+        <ThemeProvider theme={theme}>
+          <CssBaseline />
+          <Component {...pageProps} />
+        </ThemeProvider>
+      </CacheProvider>
     </RecoilRoot>
   );
 };
