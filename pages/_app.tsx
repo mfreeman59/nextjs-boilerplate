@@ -1,8 +1,4 @@
-import {
-  CssBaseline,
-  ThemeProvider,
-  createTheme,
-} from '@mui/material';
+import { CssBaseline, ThemeProvider, createTheme } from '@mui/material';
 import { AppProps } from 'next/dist/shared/lib/router/router';
 import Head from 'next/head';
 import React from 'react';
