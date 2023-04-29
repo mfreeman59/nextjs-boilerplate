@@ -39,7 +39,9 @@ MyDocument.getInitialProps = async (ctx) => {
   const originalRenderPage = ctx.renderPage;
 
   const cache = createCache({ key: 'css', prepend: true });
-  const { extractCriticalToChunks } = createEmotionServer(cache);
+  // 下記エラーは外部ライブラリ依存のため無視
+  // eslint-disable-next-line @typescript-eslint/unbound-method
+  const { extractCriticalToChunks } =  createEmotionServer(cache);
 
   ctx.renderPage = () => originalRenderPage({
     enhanceApp: (App: any) => function EnhanceApp(props) {
@@ -48,7 +50,7 @@ MyDocument.getInitialProps = async (ctx) => {
   });
 
   const initialProps = await Document.getInitialProps(ctx);
-  const emotionStyles = extractCriticalToChunks(initialProps.html);
+  const emotionStyles =  extractCriticalToChunks(initialProps.html);
   const emotionStyleTags = emotionStyles.styles.map((style) => (
     <style
       data-emotion={`${style.key} ${style.ids.join(' ')}`}

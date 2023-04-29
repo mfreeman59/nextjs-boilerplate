@@ -46,6 +46,7 @@ const MyApp = (props: AppProps) => {
   const { Component, pageProps, emotionCache = clientSideEmotionCache } = props;
   return (
     <RecoilRoot>
+      {/* eslint-disable-next-line @typescript-eslint/no-unsafe-assignment */}
       <CacheProvider value={emotionCache}>
         <Head>
           <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0" />
